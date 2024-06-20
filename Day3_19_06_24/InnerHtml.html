@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 01</title>
+    <script>
+        function myFunction(){
+            document.getElementById('demo').innerHTML = 5+6;
+
+        };
+        function myFunction1(){
+            document.getElementById('demo1').innerHTML = ' I am intern at quantela';
+            // By using innerHTML WE CAN GIVE THE DATA INTO THE ELEMENT
+        };
+        function myFunction2(){
+            document.write(5+7);
+        };
+        function myFunction3(){
+           //window.alert(5);
+            //window.alert("Hey you go");
+            alert("Power star pawan kalyan");
+        };
+        
+            console.log("These are Display possibilities");
+        
+    </script>
+</head>
+
+<body>
+    
+    <h2>This is inner html page</h2>
+    <p id="demo"></p><br>
+    <button type="button" onClick="myFunction()">click me!</button>
+
+    <P id="demo1">Hi! I am vasudeva rao killi</P>
+    <button type ="button" onClick = "myFunction1()">try it!</button><br><br>
+
+    <!-- <script>
+        document.write(6+8);
+    </script> -->
+    <button type = "button" onClick = "myFunction2()">Login!</button><br><br>
+
+    <button type="button" onClick = "myFunction3()">Alert button</button><br><br>
+
+   <h2></h2>
+    <button type="button" onClick = window.print()>you want text!</button>
+    
+</body>
+</html>

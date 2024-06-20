@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 5</title>
+    <script>
+        function myFunction(){
+            let x,y,z;
+            x = 20;
+            y = 40;
+            z = x+y;//60
+            document.getElementById('demo').innerHTML = "The value is "+ z + ".";
+        };
+        function myFunction1(){
+            const Student ={
+                name : "@VASUDEVA RAO KILLI",
+                age : 22,
+                salary : "8lpa",
+                village : "Srikakulam",
+                state : "Andhrapradesh",
+                isValid : true
+            };
+            //document.getElementById('demo1').innerHTML = typeof Student["age"];
+            //document.write(console.log(Student));
+            if(Student.isValid){
+            document.getElementById('demo1').innerHTML = Student.name +" "+Student.age +" "+
+            Student["salary"] +" "+ Student['village'] +" "+ Student.state;
+            }else{
+                document.getElementById('demo1').innerHTML = 'NO DATA AVAILABLE';
+            }
+
+        };
+        function myFunction2(){
+             document.getElementById('demo2').src = 'data:image/jpeg;base64,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';
+             document.getElementById('demo3').src = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIADYAXAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAFAAEDBAYCB//EADQQAAIBAwMDAQcCBQUBAAAAAAECAwAEEQUSIRMxQVEGFCJhcYGRQvAVMjNioSMkseHxB//EABoBAQADAAMAAAAAAAAAAAAAAAQBAgMABQb/xAAfEQACAgICAwEAAAAAAAAAAAAAAQIRAyESMQQTIkH/2gAMAwEAAhEDEQA/AM/C6pdgqSvgg1NpxUrcMe5lahUd1ukYuApTHerOlyr7kx4JaRs/mvYWnNHnWqiWowVn4Hwn/FE5bIiyWYsGjkynHg0Ms2LyAAntyKMO/u8AmjO141JU/PGKiUq6Kp72ZnSreS1ieIptcO2Rntz2ND9ahy67e+76VZ0O9aSGZpCXcysSxOSSTUOuEFonXK/EM5oM3F+OqFxv3MCqdkbr+pCeKdGcwKx4B5yTXMhJeVfJOe9J599sAq8Ac4rruVC6OJZchgpBJHmo1kLYY+RV7SraynuYxfXLW0Zbltvj1znijE2kaDZRXDXmrCdImHRFmyl5htBxjkA88k8fSpVvbLaWjIXa5kGPIrgNgADmppG2yq2AAcioSRk5zWD7NV0aaaUdMP8AqC5PPerFrKx06JkwD3Ax61cm9nU6soSaX3TaMFoyHz5GCPGDTyW+nQ+ztp7vcZuzI5k3Tj+lxsyoHBP7+XbyzqErnqwCwuUaiRaZc9K5JZiCVHFHridXtmHJ+A/8Vko1cXOVXIYKODz+K1GlQfxG59x6xjdkYDAydw8fLzW2DLGUXsPmxSi06BVrb2SaHb3NpcwmcnEkfkHPmg2qySPH8Z7Vf1bTbbRDGlvcySgvJlpI9hwCByD5yGqj0Y7yJv8AdwrtBJ3sRgfXGPtQJZFw4WLUHy5UCnfdJIFHdc5NXtEitLi/totRl6ds39Rs4/8AKfTbexF7svQ0sW7DSwyYx8sHx86N3emaDbwTjTfebyWQ7IjO/SSPIzuJOCcZx6cGipxX02hDi+khtf0m1mu5rm2vIBYQIq9RZATIcfygetZElVMhXGA3Y+KJQaaA6Nd3EKW+QJCsqlgucfTOP34ot7VXYnisYIby0nSCMFbhGUOGy3w5wvG3Z4HPpVJ54OSo0hiklsGW3snrd7LGI7CSINyJJhsUfU0dk/8AnUkax+8XxWVlywROByRx+Kl0r2ru47KSO+ntZHZsIZJAhbnuCuc4P9vPrXqXstf6frWjxXcMkbHJSRdwOxx3H78EUqHoq3sH5GTNj2lo879pfazTJXd9JW4uQU3GSVGjSM+BjHftzj71lNQmjn022nZ5Zr26lOyMbSVxx/LyTk8Dt2PegzSStGEjmUpu/kA7fbH7+1Wv4jMhtejti924WSPvu3E5z6jPf0FCzZ5ZF9MbixKHQR1rRNZ0NLWTXNOuLWG4z02kdeeOeFPB+Rq3p13c6fdPeW/urPIABFGFQYXtjHA7jsPOTzR/W7aLW/ZTTdcvDHcyzdOzNzc3LmQMnV39m2jIWI8j9TZ7ZAi/srnTEl0OQ2wiMnVeO3bcwPYrvHfgHj1PHzGszxzTi9iPWpqmVtdS41OSO71CaGKeViejCfiUFieckDJJYk/n0oPeW/uVwtvczTdAgshjYEbvPnB44JHfipr14El61mY+muDsGQBjnkHk9zz8vzcbVzqFrMmoyGVo1YJIcBR259SSV898DPirexzdkcVGkgBLO0blEZssAFwT9q4km2H/AFt4cZG1fnkHzUaEys8iMq7Bnkgk/Y9zTuW6u4BoSg5WQHg+amzlB72X0uHW7O7gjk6epp8UTu3wMCMbSPH1qz7I6Ij3F7d69GFg08dPoz8b5fQjyAO/1FZmG7ls5Vnt5WRvJU43jNPqNzNLM0s7ylp/jZC3B9CR9BW8Z41TraMZRm7SeixLBa3OpTxQ3cawqcxsUwG+XFEI9LvIF2x6tBCp52LcMv5A81n4VUqzZwynI9aicqWJx/ms+W7L8WHLy16c0fT2jqKTEexXv3xj0PatFo8MNxc2VtLF8HVCGJWbD+pLZyPHAHNPSoc2+ImKVhQ+1dxKkkcdzdwXURkiDRbAgBfnjHooAxjjigM2tzdAW0SLDMCwmulHxEEkYVRhQAGxjilSqsYRTLNsDxzQyyyuI2EZ2lVJBLH+7685A9flVW+eVGiIYFduB8IHb1A4z86VKkR7MWQTBpFEzNjGBgeuP+qaKWVzGA+HZ8iX9Q+9KlVvwqzm7mDsihFUqMMQO58mo5B8IVmJ28DIpUqkg5IcQLg4Vic/Oo8Y7gGlSqTh/9k=';
+             document.getElementById('demo2').style.width ="250px";
+             document.getElementById('demo3').style.width = "500px";
+            }
+    </script>
+</head>
+<body>
+    <p id="demo"></p><br>
+    <button type="button" onClick = "myFunction()">Click me!</button><br><br>
+    <h12 id="demo1"></h12><br>
+    <button type="button" onClick="myFunction1()">Click the button to get details</button><br><br>
+    <button type="button" onClick="myFunction2()">tap on me!</button>
+    <img id="demo2" /img><br><br>
+    <img id="demo3" /img>
+</body>
+</html>
