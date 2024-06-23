@@ -1,0 +1,49 @@
+<!--If you think you are comfortable in javascript then do this web page with html and java script.
+
+1. Create one input field of type text and try to restrict user to enter only numbers
+(Dont use input type number for this try to do it java script/ jQuery)
+2. In the same page create another input text feild and check if user is entering any 
+special characters , jf yes then show an alert Like special charectors are not allowed.
+3. Give an other text box for address and restrict user to enter a maximum of 50 letter 
+which can contain text / numbers / some special charectors which u generally use for address feild ex:- ( , /-) 
+
+4.Creat one table of 3 columns Name phone and address and give button bellow the input fields that 
+i have mentioned above and when i click on it append them to the table.
+
+No need to worry about styling focus on java script part-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Document</title>
+    
+    <link rel="stylesheet" href="PersonDetails.css"/>
+    <script src="PersonDetails.js"></script>
+</head>
+<body class="bodyCls">
+    <h1 style="color:red;font-family: 'Courier New', Courier, monospace;">Employee Table</h1>
+    <div class ="divClas">
+    <table class="userTable">
+        <thead>
+            <th>Name</th>
+            <th>Phone Number</th>   
+            <th>Address</th>
+        </thead>
+        <tbody id="content">
+          
+          
+        </tbody>
+    </div>  
+    </table><br>
+    <label>Name :</label>
+    <input id="nameInp" type="text" placeholder="Enter your name" oninput="validateName()"/><br><br>
+    <label>Phone Number :</label>
+    <input id="phoneInp" oninput="validatePhoneNumber()" placeholder="Enter your phone Number"/><br><br>
+    <label>Address :</label>
+    <textarea id="addInp" oninput="validateAddress()" type="text" maxlength = "50" placeholder="Enter your address" ></textarea><br><br>
+    <button class="buttonClss" type="button" onClick = "addUserDetails()">Submit</button>
+
+    
+</body>
+</html>

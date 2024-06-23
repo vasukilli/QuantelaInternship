@@ -1,0 +1,24 @@
+table,th,tr,td {
+    border : 1px solid black;
+    text-align : center;
+    color:green;
+    
+}
+td{
+    color:rgb(62, 45, 48);
+    
+}
+.bodyCls{
+    background-color : ;
+    text-align : center;
+}
+.userTable{
+    text-align : center;
+}
+.userTable{
+    margin: 0 auto;
+}
+.buttonClss{
+    color:blue;
+    
+}
