@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="Student.css"/>
+</head>
+<body>
+
+      <h1>Student Registration Form</h1><br><br>
+      <label>Name :</label>
+      <input id="name" type="text" placeholder="Enter your name" "><br><br>
+      <label>Father name :</label>
+      <input id="fatherName"type="text" placeholder="Enter your father name" "><br><br>
+      <label>age :</label>
+      <input id="age" type="number" placeholder="Enter your age" ><br><br>
+      <label>Date Of Birth :</label>
+      <input id="date" type="date" ><br><br>
+      <label>Gender :</label>
+      
+      <label>
+      <input class="g1" id="male" type="radio" name="gender" value="Male"/>Male</label>
+      <label>
+      <input class="g1" id="female" type="radio" name="gender" value="Female"/>Female</label>
+      <label>
+      <input class="g1" id="other" type="radio"  name="gender" value = "Other">other</label><br><br>
+       
+       
+       <Label>Graduate :</Label>
+       <label>
+        <input type = "radio" class="s1" name="Graduate" value = "yes"/>
+        yes
+       </label>
+       <label>
+        <input type="radio" class="s1" name="Graduate" value = "no"/>
+        No
+       </label><br><br>
+       <label>Skills :</label>
+       <textarea id="skills" maxlength="50" placeholder="Enter your Skills"></textarea><br><br>
+
+       <button type="button" onClick="addStudentDetails()">Add Details</button><br><br>
+
+       <div>
+        <table class="userTable">
+            <thead >
+                <th>SNo</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Age</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Graduate (yes/no)</th>
+                <th>Skills</th>                
+                <th>Actions (delete/update)</th>
+
+            </thead>
+            <tbody id="content">
+
+            </tbody>
+        </table>
+       </div>
+
+       <script src="StudentRegistrationForm.js"></script>
+</body>
+</html>
