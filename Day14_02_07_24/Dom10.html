@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of a Sphere</title>
+</head>
+<body>
+    <h1>Finding volume of sphere</h1>
+    <form>
+        <Label for="Radius">Radius :</Label>
+        <Input type="text" id="radius"/><br><br>
+        <label for="volume">Volume :</label>
+        <input type="text" id="volume"/><br><br>
+        <button type="button" onClick="findVolume()">Find Volume</button>
+    </form>
+    <script>
+        const findVolume = () => {
+            let vol;
+            let radius = document.getElementById("radius").value;
+            radius = Math.abs(radius);
+            vol = (4/3) * Math.PI * Math.pow(radius,3);
+            document.getElementById("volume").value = vol;
+            
+        }
+    </script>
+</body>
+</html>
