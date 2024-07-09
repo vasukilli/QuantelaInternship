@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOut Event</title>
+    <style>
+        #blck{
+            border : 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript MouseOver methods</h2>
+    <p id="datas"></p>
+    <div id="blck">The javascript mouse-out event works after removing the
+     pointer on the particular tag. It is a mouse event to handle 
+     functionality to disable the mouseout function.  </div>
+
+     <script>
+        const blck = document.querySelector("#blck");
+        let datas = document.getElementById("datas");
+
+        blck.addEventListener("mouseover",() =>{
+            document.getElementById("datas").innerHTML = "JavaScript MOUSE OVER Method activates successfully!!!";
+            document.getElementById("blck").style.color = "red";
+            document.getElementById("blck").style.fontSize = "18px";
+
+        });
+
+        blck.addEventListener("mouseout",() =>{
+            document.getElementById("datas").innerHTML = "JavaScript MOUSE OUT Method activates successfully!!!";
+            document.getElementById("blck").style.fontSize = "12px";
+            document.getElementById("blck").style.color = "black";
+
+
+
+        });
+
+
+     </script>
+</body>
+</html>

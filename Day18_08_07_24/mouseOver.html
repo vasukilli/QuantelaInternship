@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOver</title>
+</head>
+<body>
+    <h1 id="hid">Geeks For Geeks</h1>
+    <h2>Dom onMouseOver event</h2>
+
+    <script>
+        document.getElementById("hid").addEventListener("mouseover" , over);
+        document.getElementById("hid").addEventListener("mouseout" , out);
+
+        function over() {
+            document.getElementById("hid").style.color = "red";
+        };
+        function out () {
+            document.getElementById("hid").style.color = "pink";
+        }
+    </script>
+    
+</body>
+</html>

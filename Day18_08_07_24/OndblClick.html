@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Event</title>
+    <style>
+        #container{
+            text-align : center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Geeks for geeks</h1>
+        <p>double click event is worked when the mouse click is double taped.</p>
+        <H3 id="dbl">Double Click</H3>;
+        <button id="demo">click me!</button>
+    </div>
+
+    <script>
+        let fullName = window.prompt("Enter your full name");
+        let container = document.getElementById("container");
+        let para = container.querySelector("#dbl");
+        para.addEventListener("dblclick",() =>{
+            para.innerHTML = fullName;
+        });
+
+        const btn1 = document.createElement("button");
+        btn1.innerText = "Tap me!";
+        btn1.style.color = "red";
+        btn1.style.textAlign = "center";
+        btn1.style.fontFamily = "verdana";
+        document.body.appendChild(btn1);
+
+        btn1.addEventListener("dblclick", ()=>{
+                for(let i=0 ; i<fullName.length ; i++){
+                    alert(`${fullName.charAt(i)}`);
+                }
+        });
+
+        document.getElementById("demo").ondblclick = function(){
+            myFunction();
+        }
+        const myFunction = () =>{
+            if(fullName === 'vasu'){
+                document.body.style.display = "none";
+            }else{
+                document.body.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
