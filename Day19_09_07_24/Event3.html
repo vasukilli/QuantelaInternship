@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling 03</title>
+    <style>
+        #block{
+             height : 200px;
+             width : 200px;
+             border : 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="block"></div>
+
+    <script>
+        const changeColor = (elementId,clr) =>{
+            const element = document.getElementById(elementId);
+            element.addEventListener("mouseover",() =>{
+                element.style.backgroundColor = clr;
+            });
+            element.addEventListener("mouseleave" ,() =>{
+                element.style.backgroundColor = clr;
+            })
+        }
+        changeColor("block","green");
+        changeColor("block","red");
+    </script>
+</body>
+</html>

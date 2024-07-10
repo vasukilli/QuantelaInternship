@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+</head>
+<body>
+    <div>
+        <button type="button" id="previous">Previous</button>
+        <img id="image" src="C:\Users\HP\Downloads\pspk1.jpg" title="pspk1">
+        <button type="button" id="next">Next</button>
+    </div>
+    <script>
+        const images = ['pspk1.jpg','pspk2.jpg','pspk3.jpg'];
+        let currentInd = 0;
+        const previouBtn = document.getElementById("previous");
+        const nextBtn = document.getElementById("next");
+        const image = document.getElementById("image");
+
+        previouBtn.addEventListener("click" ,()=>{
+            currentInd = (currentInd - 1 + images.length) % images.length;
+            image.src = images[currentInd];
+            image.title = `pspk${currentInd+1}`;
+
+        });
+
+        nextBtn.addEventListener("click" , () =>{
+            currentInd = (currentInd + 1)%images.length;
+            image.src = images[currentInd];
+            image.title = `pspk${currentInd+1}`;
+
+        });
+    </script>
+</body>
+</html>

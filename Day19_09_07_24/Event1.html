@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling 01</title>
+</head>
+<body>
+     <div class = "dropdown">
+        
+            <button class="dropdown-button">Select Subject</button>
+
+            <ul class="dropdown-options">
+                <li>Mathmatics</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+            </ul>
+        
+     </div>
+
+     <script>
+        const dropDownBtn = document.querySelector(".dropdown-button");
+        const dropDownOpt = document.querySelector(".dropdown-options");
+        dropDownBtn.addEventListener("click" ,() =>{
+            dropDownOpt.style.display = dropDownOpt.style.display === 'none' ? 'block' : 'none';
+        });
+     </script>
+
+    <script src="Event2.js"></script>
+    
+</body>
+</html>

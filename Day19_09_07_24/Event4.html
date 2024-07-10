@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validations</title>
+    <style>
+        #span{
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label>Name :</label>
+        <input id="name" type="text" name="name"/>
+        <span id="span" type="text" name="span"></span><br><br>
+        <label>Email :</label>
+        <input id="email" type="email" name="email"/><br><br>
+        <button>Submit</button>
+
+    </form>
+    <script>
+        const formVal = document.getElementById("myForm");
+        formVal.addEventListener("submit" , (event) =>{
+            event.preventDefault();
+            let nameField = document.getElementById("name");
+            let errorField = document.getElementById("span");
+            let emailField = document.getElementById("email");
+
+            let nameVlaue = nameField.value.trim();
+            errorField.innerText = '';
+
+            if(nameVlaue === ''){
+                errorField.innerText = "This field is manditory"
+                //nameField.focus();
+            }else{
+                alert("Form submited successfully!!");
+            }
+        });
+    </script>
+</body>
+</html>
