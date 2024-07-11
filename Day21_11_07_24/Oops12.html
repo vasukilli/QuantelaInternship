@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departement Operations</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class called University
+        //  with properties for university name and departments. Include methods to
+        //   add a department, remove a department, and display all departments. 
+        //   Create an instance of the University class and add and remove departments.
+
+        class University{
+            constructor(){
+                this.universityName = '';
+                this.departments = [];
+            }
+            addDepartment(department){
+                this.departments.push(department);
+                document.writeln("Departement is added successfully " + `${department}` + "<br>");
+            }
+            removeDepartment(department){
+                let index = this.departments.indexOf(department);
+                if(index !== -1){
+                    this.departments.splice(index,1);
+                    document.writeln("Departement is removed successfully " + `${department}` + "<br>");
+                }else{
+                    document.writeln("There is no departements available " + "<br>");
+                }
+            }
+            displayDepartments(){
+                if(this.departments.length === 0){
+                    document.writeln("No departements are available for display" + "<br>");
+                }else{
+                    this.departments.forEach((department,index) =>{
+                        document.writeln(`${index +1} . ${department}` + "<br>");
+                    })
+                }
+            }
+        }
+        const college1 = new University("ABC univeristy");
+        college1.addDepartment("Mathematics");
+        college1.addDepartment("physics");
+        college1.addDepartment("chemistry");
+        college1.addDepartment("computers");
+
+        college1.removeDepartment("physics");
+        college1.displayDepartments();
+
+    </script>
+</body>
+</html>

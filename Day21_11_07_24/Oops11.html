@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class called BankAccount
+    //      with properties for account number, account holder name, and balance. 
+    //      Include methods to deposit, withdraw, and transfer money between accounts. 
+    //      Create multiple instances of the BankAccount class and perform operations such as
+    //       depositing, withdrawing, and transferring money.
+
+    class BankAccount{
+        constructor(accountNumber,accountHolderName,balance){
+
+            this.accountNumber = accountNumber;
+            this.accountHolderName = accountHolderName;
+            this.balance = balance;
+
+        }
+        deposit(amount){
+            this.balance = this.balance + amount;
+            document.writeln(`${amount}` +" is deposited to this " + `${this.accountNumber}`+"<br>");
+        }
+        withdraw(amount){
+            if(amount <= this.balance){
+                this.balance = this.balance - amount;
+                document.writeln(`${amount}` +" is withdraw from this " + `${this.accountNumber}`+"<br>");
+
+            }else{
+                document.writeln("Insufficient funds !...");
+            }
+        }
+        transfer(amount,transforedAccount){
+            if(amount <= this.balance){
+                this.balance = this.balance - amount;
+                transforedAccount.deposit(amount);
+                document.writeln(`${amount}` + " is transfored from this " + `${this.accountNumber}` + " to " + `${transforedAccount.accountNumber}`);
+            }else{
+                document.writeln("Insuficent money in this acccount " + `${this.accountNumber}` + " transfor is not possible ");
+            }
+        }
+        displayBalance(){
+            document.writeln("In this account " + `${this.accountNumber}` + " balance is " + this.balance + "<br>");
+        }
+    }
+    const account1 = new BankAccount('SB-012', 'Karishma Hedy', 2000);
+    
+
+    account1.deposit(3000);
+    account1.withdraw(200);
+    account1.displayBalance();
+
+    const account2 = new BankAccount('SB-019', 'Phokas Intan', 3000);
+
+    account2.deposit(3000);
+    account2.withdraw(200);
+    account2.displayBalance();
+    
+    account1.transfer(100,account2);
+    account2.displayBalance();
+
+
+
+
+
+     </script>
+</body>
+</html>

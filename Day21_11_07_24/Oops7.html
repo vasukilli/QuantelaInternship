@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class `Book` with properties for title, 
+        // author, and publication year. Include a method to display book details. 
+        // Create a subclass called 'Ebook' that inherits from the 'Book' 
+        // class and includes an additional property for book price. Override the display method
+        //  to include the book price. Create an instance of the 'Ebook' class and display its 
+        //  details.
+
+        class Book{
+            constructor(title,author,year){
+                this.title = title;
+                this.author = author;
+                this.year = year;
+            }
+            displayDetails(){
+                document.writeln("Title :" + `${this.title}` + "<br>");
+                document.writeln("Author :" + `${this.author}` + "<br>");
+                document.writeln("Year :" + `${this.year}` + "<br>");
+            }
+        }
+        class Ebook extends Book{
+            constructor(title,author,year,price){
+                super(title,author,year);
+                this.price = price;
+            }
+            displayDetails(){
+                super.displayDetails();
+                document.writeln("Book price :" + `${this.price}`);
+            }
+        }
+        const bkDetails = new Ebook('Don Quixote', 'Miguel de Cervantes', 1605, 21.49);
+        bkDetails.displayDetails();
+    </script>
+    
+</body>
+</html>

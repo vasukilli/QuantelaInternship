@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class called Product with 
+        // properties for product ID, name, and price. Include a method to calculate 
+        // the total price by multiplying the price by the quantity. Create a subclass
+        //  called PersonalCareProduct that inherits from the Product class and 
+        //  adds an additional property for the warranty period. Override the 
+        //  total price calculation method to include the warranty period.
+        //   Create an instance of the PersonalCareProduct class and 
+        //   calculate its total price.
+
+        class Product{
+            constructor(id,name,price){
+                this.id = id;
+                this.name = name;
+                this.price = price;
+            }
+            calculatePrice(quantity){
+                return this.price * quantity;
+            }
+        }
+        class PersonalCareProduct extends Product{
+            constructor(id,name,price,warranty){
+                super(id,name,price);
+                this.warranty = warranty;
+            }
+            calculatePrice(quantity){
+                  const totalPrice = super.calculatePrice(quantity);
+                  return totalPrice + this.warranty;
+            }
+
+        }
+        const pcp = new PersonalCareProduct(1, 'Shampoo', 10, 2);
+        const Price = pcp.calculatePrice(3);
+        document.writeln(Price);
+
+    </script>
+</body>
+</html>

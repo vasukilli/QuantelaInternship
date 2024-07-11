@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Application</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class called "BankAccount"
+        //  with properties for account number and balance. Include methods to deposit and 
+        //  withdraw money from the account. Create some instances of the "BankAccount" class,
+        //   deposit some money, and withdraw a portion of it.
+
+        class BankAccount{
+            constructor(accntNum,balance){
+                this.accntNum = accntNum;
+                this.balance = balance;
+                document.writeln("Account Number is :" + this.accntNum + "<br>");
+                document.writeln("Balance is :" + this.balance +"<br>");
+            }
+            deposit(amount){
+                this.balance = this.balance + amount;
+                document.writeln("Deposited amount is :" + amount +"<br>");
+
+            }
+            withdraw(amount){
+                if(amount <= this.balance){
+                    this.balance = this.balance - amount;
+                    document.writeln("Withdraw amount :" + amount + "<br>");
+                }else{
+
+                    document.writeln("Insufficiant funds "+"<br>");
+                }
+
+            }
+            displayAmount(){
+                document.writeln("Total balance is : "+ this.balance +"<br>");
+            }
+        }
+        const bnk = new BankAccount('SB-123', 1500)
+        bnk.deposit(500);
+        bnk.withdraw(250);
+        bnk.displayAmount();
+        bnk.withdraw(1700);
+        bnk.displayAmount();
+    </script>
+    
+</body>
+</html>

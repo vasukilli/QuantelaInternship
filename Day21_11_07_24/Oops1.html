@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program to create a class called "Person" 
+        //with properties for name, age and country. Include a method to display the person's details. 
+        //Create two instances of the 'Person' class and display their details.
+        class Person{
+            constructor(name,age,country){
+                this.name = name;
+                this.age = age;
+                this.country = country;
+            }
+            viewDetails(){
+                document.writeln(this.name + " " + this.age + " " + this.country +"<br>");
+            }
+
+        }
+        var person1 = new Person("vasudeva rao killi",22,"India");
+        person1.viewDetails();
+    </script>
+    
+</body>
+</html>

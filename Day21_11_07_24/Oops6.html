@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Salary</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program that creates a class called 'Employee' 
+        // with properties for name and salary. Include a method to calculate annual salary.
+        //  Create a subclass called 'Manager' that inherits from the 'Employee' 
+        //  class and adds an additional property for department. Override the annual salary 
+        //  calculation method to include bonuses for managers. Create two instances of the 
+        //  'Manager' class and calculate their annual salary.
+
+        class Employee{
+            constructor(name,salary){
+                this.name = name;
+                this.salary = salary;
+            }
+            calculateAnualSal(){
+                return this.salary * 12;
+            }
+        }
+        class Manager extends Employee{
+            constructor(name,salary,department){
+                super(name,salary);
+                this.department = department;
+            }
+            calculateAnualSal(){
+                let bonus = 0.1;
+                const baseSalary = super.calculateAnualSal();
+                document.writeln("The bonus is : " + bonus + "<br>");
+                return (bonus * baseSalary) + baseSalary;
+
+            }
+        }
+        const manager1 = new Manager('Angela Luca', 5000, 'Marketing');
+        const anualSalary = manager1.calculateAnualSal();
+        
+        document.writeln("Manager data :" + "<br>");
+        document.writeln("Manager Name: " + manager1.name + "<br>");
+        document.writeln("Manager salary: " + manager1.salary + "<br>");
+        document.writeln("Manager Name: " + manager1.department + "<br>");
+        document.writeln("Manager Anual salary: " + anualSalary + "<br><br>");
+
+        const manager2 = new Manager('Jonelle Rozaliya', 5500, 'Marketing');
+        const anualSalary1 = manager2.calculateAnualSal();
+
+        document.writeln("Manager data :" + "<br>");
+        document.writeln("Manager Name: " + manager2.name + "<br>");
+        document.writeln("Manager salary: " + manager2.salary + "<br>");
+        document.writeln("Manager Name: " + manager2.department + "<br>");
+        document.writeln("Manager Anual salary: " + anualSalary1 + "<br><br>");
+
+    </script>
+</body>
+</html>
