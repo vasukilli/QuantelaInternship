@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation validate</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(){
+                var id;
+                var name;
+                var age;
+                var marks;
+            }
+            getId(){
+                return this.id;
+            }
+            setId(id){
+                this.id = id;
+            }
+            getName(){
+                return this.name;
+            }
+            setName(name){
+                this.name = name;
+            }
+
+            getAge(){
+                return this.age;
+            }
+            setAge(age){
+                this.age = age;
+            }
+            getMarks(){
+                return this.marks;
+            }
+            setMarks(marks){
+                if(marks < 0){
+                      window.alert("you are faild");
+                }else{
+                this.marks = marks;
+                }
+            }
+
+
+
+        }
+        var std1 = new Student();
+        std1.setId(101);
+        std1.setName("vasudeva rao killi");
+        std1.setAge(24);
+        std1.setMarks(0);
+        document.writeln(std1.getId() +" " + std1.getName() + " " + std1.getAge() + " " + std1.getMarks() + "<br>");
+        
+    </script>
+    
+</body>
+</html>

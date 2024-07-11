@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoType</title>
+</head>
+<body>
+    <script>
+        //prototype declaration
+        //classname.prototype.methodname = function()
+        //classname.prototype.newvarieable
+        
+        function Employee(id,name,salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+        Employee.prototype.displayDetails = function()
+        {
+            return this.id + " " + this.name + " " + this.salary ;
+        }
+        Employee.prototype.age = 23;
+        
+        
+
+        
+        let e1 = new Employee(101,"vasu",50000);
+        let e2 = new Employee(102,"deva",60000);
+
+        document.writeln(e1.displayDetails() + "<br>");
+        document.writeln(e1.id + " " + e1.name + " " + e1.salary + " " + e1.age + "<br>");
+        document.writeln(e2.id + " " + e2.name + " " + e2.salary + " " + e2.age + "<br>");
+
+        
+    </script>
+</body>
+</html>

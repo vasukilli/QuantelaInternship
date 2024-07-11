@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Declarations</title>
+</head>
+<body>
+    <script>
+        //1.By object literal 
+        const emp = {
+            id : 101,
+            name : "vasudeva rao",
+            salary : 50000
+        };
+        document.write(emp.id + " " + emp.name + " " + emp.salary +"<br>");
+
+        //2.By creating instance of Object directly (using new keyword)
+
+        let emp1 = new Object();
+        emp1.name = "Ramarao";
+        emp1.age = 22;
+        emp1.salary = 60000;
+        emp1.village = "peddatamarapalli";
+
+        document.write(emp1.name +" "+emp1.age+" "+emp1.salary+" "+emp1.village +"<br>");
+
+        //3) By using an Object constructor
+
+         function Employee(id,village,mandal,district,state){
+            
+            this.id = id;
+            this.village = village;
+            this.mandal = mandal;
+            this.district = district;
+            this.state = state;
+        };
+        let e = new  Employee(534534,"peddatamara palli","Nandigam","sklm","AP");
+        document.write(e.id + " " + e.village + " " + e.mandal + " " + e.district + " "+ e.state + "<br>");
+
+        function Human(fullName,surName,age,salary){
+            this.fullName =fullName;
+            this.surName = surName;
+            this.age = age;
+            this.salary = salary;
+            this.updateSalary = updateSalary;
+            function updateSalary(newSalary){
+                this.salary = newSalary;
+
+            }
+            // let updateSalary = (newSalary) =>{
+            //     this.salary = newSalary;
+            // }
+        }
+        let e1 = new Human("Deva","killi",22,50000);
+        document.write(e1.fullName + " " + e1.surName + " " + e1.age + " " + e1.salary +"<br>");
+        e1.updateSalary(60000);
+        document.write(e1.fullName + " " + e1.surName + " " + e1.age + " " + e1.salary +"<br>");
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <Script>
+        class Employee{
+            constructor(){
+                this.id = 101;
+                this.name = "deva";
+                this.age = 24;
+            }
+
+        }
+        var emp = new Employee();
+        document.writeln(emp.id + " " + emp.name + " " + emp.age + "<br>");
+
+        class Parent{
+            constructor(){
+                this.tutorial = "Javat point";
+            }
+        }
+        class Child extends Parent{
+            constructor(id,name){
+                super();
+               this.id = id;
+               this.name = name;
+            }
+
+        }
+        let cobj = new Child(1,"vasu");
+        document.writeln(cobj.id + " " + cobj.name + " " + cobj.tutorial);
+    </Script>
+</body>
+</html>

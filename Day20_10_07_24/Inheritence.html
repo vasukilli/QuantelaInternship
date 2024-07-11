@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence</title>
+</head>
+<body>
+    <script>
+        class Moment extends Date{
+            constructor(){
+                super();
+            }
+        }
+        var m = new Moment();
+        document.writeln("Prsent date :");
+        document.writeln(m.getDate() + "-" + (m.getMonth() + 1) +"-" + m.getFullYear() +"<br>");
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class expression</title>
+</head>
+<body>
+    <script>
+        // class emp{
+         //class declaration
+        // }
+        // class expression
+
+        var emp = class {
+            constructor(id,name){
+                this.id = id;
+                this.name = name;
+            }
+            viewDetails(){
+                document.writeln(this.id + " " + this.name + "<br>");
+
+            }
+
+        }
+        var e1 = new emp(101,"vasu");
+        var e2 = new emp(102,"kalyani");
+        e1.viewDetails();
+        e2.viewDetails();
+
+        var emp = class{
+            constructor(id,name){
+                this.id = id;
+                this.name = name;
+            }
+            viewDetails(){
+                document.writeln(this.name + " " + this.id + "<br>");
+            }
+        }
+        var e3 = new emp(103,"triveni");
+        var e4 = new emp(104,"drakshayani");
+        e3.viewDetails();
+        e4.viewDetails();
+    </script>
+    
+</body>
+</html>

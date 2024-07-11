@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Declaration</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            constructor(id,name){
+               this.id = id;
+               this.name = name;
+            }
+            displayDetails(){
+                document.writeln(this.id+" "+this.name +"<br>");
+            }
+
+        }
+        var e1 = new Employee(101,"vasu");
+        var e2 = new Employee(102,"deva");
+        e1.displayDetails();
+        e2.displayDetails();
+    </script>
+</body>
+</html>

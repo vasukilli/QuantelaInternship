@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static </title>
+</head>
+<body>
+    <script>
+        class Test{
+            static display(){
+                return "data ivoked";
+            }
+        }
+        document.writeln(Test.display() +"<br>");
+
+        class Test1{
+            static display1(){
+                return "display1 data invvoked";
+            }
+            static display2(){
+                return "display2 data invoked";
+            }
+        }
+        document.writeln(Test1.display1() + "<br>");
+        document.writeln(Test1.display2() + "<br>");
+
+        class Test1{
+            constructor(){
+                document.writeln(Test1.display() + "<br>");
+                document.writeln(this.constructor.display());
+
+            }
+            static display(){
+                return "i am vasudeva rao killi";
+
+            }
+
+        }
+        var t = new Test1();
+
+        class Test2{
+            static display3(){
+                return "hi I AM HUMAN";
+            }
+            show(){
+                document.writeln(Test2.display3() + "<br>");
+            }
+
+        }
+        var t2 = new Test2();
+        t2.show();
+    </script>
+    
+</body>
+</html>
