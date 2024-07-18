@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Call Back Functions</title>
+</head>
+<body>
+    <button id="butn">Click me!</button>
+    <div id="status"></div>
+    <div id="result"></div>
+
+    <script>
+        const butn = document.getElementById("butn");
+        butn.addEventListener("click",() =>{
+              const xhtp = new XMLHttpRequest();
+
+              function findReadyState(){
+                  document.getElementById("status").innerHTML = xhtp.readyState;
+              }
+              function checkStatus(){
+                if(xhtp.status === 200){
+                    document.getElementById("result").innerHTML = xhtp.responseText;
+                }else{
+                    document.getElementById("result").innerHTML = "ERROR : "+ xhtp.status;
+                }
+
+              }
+              function findError(){
+t
+                document.getElementById("result").innerHTML = "Error occured";
+              }
+
+              xhtp.addEventListener("readystatechange",findReadyState);
+              xhtp.addEventListener("load",checkStatus);
+              xhtp.addEventListener("error",findError);
+
+              xhtp.open('GET','file2.txt',true);
+              xhtp.send();
+        });
+    </script>
+    
+</body>
+</html>

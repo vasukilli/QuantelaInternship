@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sending Form Data</title>
+</head>
+<body>
+    <form>
+        <Label>Name :</Label>
+        <input type ="text" id="name"/><br><br>
+
+        <Label>Age :</Label>
+        <input type ="text" id="age"/><br><br>
+
+        <Label>Village :</Label>
+        <input type ="text" id="village"/><br><br>
+    </form>
+
+        <button id="btn">Send</button><br><br>
+
+        <div id="block"></div>
+
+
+   
+    <script>
+        document.getElementById("btn").addEventListener("click" ,(event) =>{
+            event.preventDefault();
+                const userData = {
+                    name : document.getElementById("name").value,
+                    age : document.getElementById("age").value,
+                    village : document.getElementById("village").value
+
+                };
+                const req = new XMLHttpRequest();
+                req.open("POST",'https://reqres.in/api/register',true);
+                req.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+                req.send(JSON.stringify(userData));
+
+                req.onreadystatechange = function() {
+                    if(this.readyState === 4){
+                        if(this.status === 200){
+                            document.getElementById("block").innerHTML = "data added successfully!";
+                        }else{
+                            document.getElementById("block").innerHTML = "data not added!" + "ERROR : "+ this.status;
+                        }
+                    }
+                };
+        });
+    </script>
+</body>
+</html>

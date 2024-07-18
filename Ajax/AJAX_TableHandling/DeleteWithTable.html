@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete the record</title>
+    <style>
+        table,th,td{
+            border : 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete the record from the api</h1>
+    <form>
+        ID : <Input type = "text" id="userId"/><br><br>
+        <button type="button" id="butn1">Delete Data</button><br><br>
+        <div id="div1"></div><br><br>
+    </form>
+        <button type="button" id="butn2">Display Data</button><br><br>
+        <table id="table-content">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <script>
+            document.getElementById("butn1").addEventListener("click" , (event) =>{
+                event.preventDefault();
+                var userId = document.getElementById("userId").value;
+                const xhttp = new XMLHttpRequest();
+                xhttp.open('DELETE',"https://jsonplaceholder.typicode.com/users/" + userId ,true);
+                xhttp.send();
+
+                xhttp.onload = function(){
+                    if(xhttp.status === 200){
+                        document.getElementById("div1").innerHTML = "Delete record successful";
+                    }else{
+                        document.getElementById("div1").innerHTML = "ERROR :" + xhttp.status;
+                    }
+                }
+
+            });
+            document.getElementById("butn2").addEventListener("click" , () =>{
+                const xhttp = new XMLHttpRequest();
+                xhttp.open('GET','https://jsonplaceholder.typicode.com/users',true);
+                xhttp.send();
+                xhttp.onload = function(){
+                    if(this.status === 200){
+                        var users = JSON.parse(this.responseText);
+                        var tableContent = document.getElementById("table-content").getElementsByTagName("tbody")[0];
+                        tableContent.innerHTML = "";
+                        users.forEach((user) =>{
+                            var row = tableContent.insertRow();
+                            row.insertCell(0).innerHTML = user.id;
+                            row.insertCell(1).innerHTML = user.name;
+
+                        });
+                    }
+                }
+
+            });
+
+        </script>
+        
+</body>
+</html>

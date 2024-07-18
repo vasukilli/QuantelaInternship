@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Put Method</title>
+</head>
+<body>
+    <button id="btn">Click me! To Display the json data</button><br><br>
+    <div id="demo"></div>
+    <script>
+        const btn = document.getElementById("btn");
+        let obj = {
+            "id": 4,
+            "title": "Frontend Developer",
+            "isbn": "6301725926",
+            "pageCount": 548,
+            "authors" : ["vasu"]
+   
+        };
+        btn.addEventListener("click" , () =>{
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('PUT','/Data1.json',true);
+            xhttp.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(obj));
+
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    displayData();
+                }
+            };
+            
+
+        });
+        function displayData()
+        {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET','/Data1.json',true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                     const data = JSON.parse(this.responseText);
+                     let output = '';//global declaration
+                     data.forEach((book) =>{
+                          output = output + `<p>postId : ${book.postId}</P>`;
+                          output = output + `<p>id : ${book.id}</p>`;
+                          output = output + `<p>name : ${book.name}</p>`;
+                          output = output + `<p>email : ${book.email}</p>`;
+                          output = output + `<p>body : ${book.body}</p>`;
+                          output = output + "<hr>";
+
+                          document.getElementById("demo").innerHTML = output;
+                        
+                     });
+                     //document.getElementById("demo").innerHTML = output;
+                }
+            };
+
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetching Data from server</title>
+</head>
+<body>
+    <button id="btn">Get Data!</button><br><br>
+    <div id="demo"></div><br><br>
+    <div id="demo1"></div>
+
+    
+
+    <script>
+        const butn = document.getElementById("btn");
+        butn.addEventListener("click" , () =>{
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET','data.txt',true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            }
+        });
+        const butn1 = document.createElement("button");
+        let divBl = document.getElementById("demo1");
+        butn1.innerText = "Click me!";
+        divBl.append(butn1);
+
+        butn1.addEventListener("click" ,() =>{
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET','Data.json',true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    const reserved = JSON.parse(this.responseText);
+                    document.getElementById("demo1").innerHTML = "Name :" + reserved.Name + "<br>" +
+                                      "Age :" + reserved.Age + "<br>" +
+                                      "City :" + reserved.City + "<br>" +
+                                      "Pin Code :" + reserved.PinCode + "<br>";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

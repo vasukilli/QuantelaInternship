@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload property</title>
+</head>
+<body>
+    <button id="btn">Click me!</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById("btn").addEventListener("click",() =>{
+                  const xhp = new XMLHttpRequest();
+                  xhp.open('GET','Text.txt',true);
+
+                  xhp.onload = function(){
+                    if(xhp.status === 200){
+                        document.getElementById("result").innerHTML = this.responseText;
+                    }else{
+                        document.getElementById("result").innerHTML = "ERROR :" + xhp.status;
+                    }
+                  }
+                  xhp.send();
+        });
+        
+    </script>
+    
+</body>
+</html>

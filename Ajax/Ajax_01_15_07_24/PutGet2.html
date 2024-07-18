@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get and put methods in ajax</title>
+</head>
+<body>
+    <h2>Get and Put methods in XMLHttpRequest object</h2>
+    <button id="btn1">Update the data (PUT)</button><br><br>
+    <div id="div1"></div><br><br>
+    <button id="btn2">Show the data (GET)</button><br><br>
+    <div id="div2"></div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click" , ()=>{
+        const data ={
+             id: 2,
+            email: "vasudevaraoKilli@reqres.in",
+            first_name: "VasudevaRao",
+            last_name: "Killi",
+             avatar: "https://reqres.in/img/faces/2-image.jpg"
+
+        };
+        const req = new XMLHttpRequest();
+        req.open('PUT','https://reqres.in/api/users/2',true);
+        req.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+        req.send(JSON.stringify(data));
+
+        req.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("div1").innerHTML = "Updated successfully";
+                displayData();
+
+            }else{
+                document.getElementById("div1").innerHTML = "ERROR :" + this.response;
+            }
+        }
+    });
+
+      document.getElementById("btn2").addEventListener("click" ,displayData); 
+      function displayData(){
+            const req = new XMLHttpRequest();
+            req.open('GET','https://reqres.in/api/users/2',true);
+            req.send();
+            req.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    const obj = JSON.parse(this.responseText);
+                    let output = '';
+                    const person = obj.data;
+                        output = output + `<p>Id : ${person.id}</p>`;
+                        output = output + `<p>Email : ${person.email}</p>`;
+                        output = output + `<p>FirstName : ${person.first_name}</p>`;
+                        output = output + `<p>LastName : ${person.last_name}</p>`;
+                        output = output + `<p>Avathar : <img src = ${person.avatar} alter="avathar" /></p>`;
+                        output = output + "<hr>";
+
+                        document.getElementById("div2").innerHTML = output;
+                   
+                    
+                }
+            }
+      }
+
+
+    </script>
+    
+</body>
+</html>

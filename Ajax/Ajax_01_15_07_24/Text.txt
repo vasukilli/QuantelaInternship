@@ -1,0 +1,6 @@
+1.AJAX stands for Asynchronus Javascript and XML.
+2.AJAX is useful for web developers.
+3.The main functionality of ajax is without reloading document we can update the document data.
+4.XMLHttpRequest is send the request from client to server and server process the request 
+and resopse given to clicent , on the client side javascript process the requst and update the webpage.
+5.This is Asynchronosly performed.

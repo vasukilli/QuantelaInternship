@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX ex01</title>
+</head>
+<body>
+    <div id="demo">
+        <h2>XMLHttpRequest</h2>
+        <button id="btn">Click me!</button>
+    </div>
+    <div id = "div1">
+        <h2>
+            JavaScript Programming Language
+        </h2>
+        
+    </div>
+    <script>
+        /* const btn = document.getElementById("btn");
+        let data = document.getElementById("demo");
+        btn.addEventListener("click",()=>{
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function(){
+                data.innerHTML = this.responseText;
+
+            }
+            xhttp.open('GET','Text.txt',true);
+            xhttp.send();
+        }); */
+
+        const btn = document.getElementById("btn");
+        //let data = document.getElementById("demo");
+        btn.addEventListener("click",()=>{
+                 fetch('Text.txt',{
+                    method : 'get'
+                 })
+                 .then(response =>{
+                    debugger;
+                    document.getElementById("demo").innerHTML = response.json()
+                })
+                 .then(jsonData => console.log(jsonData))
+                 .catch(err => { debugger;
+
+                 })
+        });
+        
+
+        let div = document.querySelector("#div1");
+        const btn1 = document.createElement("button");
+        btn1.innerText = "Tap me!";
+        div.append(btn1);
+        const data1 = document.getElementById("div1");
+        btn1.addEventListener("click",()=>{
+            const xhhtp = new XMLHttpRequest();
+            xhhtp.onload = function(){
+                data1.innerHTML = this.responseText;
+
+            }
+            xhhtp.open('GET','file1.txt',true);
+            xhhtp.send();
+        });
+        //document.body.appendChild(div);
+    </script>
+
+
+    
+</body>
+</html>

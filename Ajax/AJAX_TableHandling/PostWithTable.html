@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new data to the table </title>
+    <style>
+    table,th,td,tr{
+        border : 1px solid red;
+    }
+    </style>
+</head>
+<body>
+    <h2>Adding New Data to the table</h2>
+    <form>
+        <Label>Id :</Label>
+        <input type="number" id="idN"/><br><br>
+        <Label>Name :</Label>
+        <input type="text" id="name"/><br><br>
+
+        <button type="button" id = "butn1">Add Data</button><br>
+        <div id="div"></div><br><br>
+        <button type="button" id = "butn2">Display Data</button><br><br>
+
+        <table id="table-content">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+        
+    </form>
+    <script>
+        document.getElementById("butn1").addEventListener("click" , () =>{
+            
+            const userData = {
+                id : document.getElementById("idN").value,
+                name : document.getElementById("name").value
+            }
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('POST',"https://jsonplaceholder.typicode.com/users",true);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(userData));
+            xhttp.onload = function(){
+                if(this.status === 201){
+                    var tableData = document.getElementById("table-content").getElementsByTagName("tbody")[0];
+                    var user = JSON.parse(this.responseText);
+                    var row = tableData.insertRow();
+                    row.insertCell(0).innerHTML = user.id;
+                    row.insertCell(1).innerHTML = user.name;
+                    document.getElementById("div").innerHTML = "New Data Added!";
+
+                }
+            };
+
+        });
+        document.getElementById("butn2").addEventListener("click" , () =>{
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET','https://jsonplaceholder.typicode.com/users',true);
+            xhttp.send();
+            xhttp.onload = function (){
+                if(xhttp.status === 200){
+                    var users = JSON.parse(this.responseText);
+                    var tableData = document.getElementById("table-content").getElementsByTagName("tbody")[0];
+                    tableData.innerHTML = '';
+                    users.forEach((user) =>{
+                        var row = tableData.insertRow();
+                        row.insertCell(0).innerHTML = user.id;
+                        row.insertCell(1).innerHTML = user.name;
+                    });
+                }
+            }
+
+
+        });
+
+    </script>
+    
+</body>
+</html>

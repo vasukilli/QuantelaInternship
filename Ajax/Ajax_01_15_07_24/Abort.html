@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abort() in Ajax</title>
+</head>
+<body>
+    <h2>abort() is useful for the canceling of present request</h2>
+    <button id="cancelation">Cancel Request!</button>
+    <script>
+            const xhttp = new XMLHttpRequest();
+            const method = "GET";
+            const url = "https://developer.mozilla.org/";
+            xhttp.open(method,url,true);
+            xhttp.send();
+
+            const butn = document.querySelector("#cancelation");
+            butn.addEventListener("click",() =>{
+                xhttp.abort();
+                // document.writeln("cancel the present request");
+                alert("cancel the present request");
+            })
+            
+    </script>
+</body>
+</html>

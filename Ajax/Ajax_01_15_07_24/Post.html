@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST method in XMLHttpRequest</title>
+</head>
+<body>
+    <h1>XMLHttpRequest Object in POST , create and update the data</h1>
+    <button id="butn">Click me!</button><br><br>
+    <div id="demo"></div>
+    <script>
+        document.getElementById("butn").addEventListener("click" ,() =>{
+            var userData = {
+                name : "Vasuedeva rao",
+                age : 22,
+                salary : 500000,
+                Nation : "India"
+            };
+            const req = new XMLHttpRequest();
+            req.open('POST','https://reqres.in/api/users',true);//create new data
+            req.send(JSON.stringify(userData));
+
+            req.onreadystatechange = function(){
+                if(req.readyState === 4){
+                    if(req.status === 201){
+                        document.getElementById("demo").innerHTML = "Update successfull ";
+                    }else{
+                        document.getElementById("demo").innerHTML = "Update not successfull ";
+                    }
+                }else{
+                    document.getElementById("demo").innerHTML = "Update faild " + req.readyState;
+                }
+            }
+
+        })
+
+    </script>
+    
+</body>
+</html>
