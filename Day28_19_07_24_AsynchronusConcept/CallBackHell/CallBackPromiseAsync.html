@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back </title>
+</head>
+<body>
+    <script>
+        function getData(data){
+             setTimeout(()=>{
+                document.writeln("data :"+ data + "<br>");
+             },4000); //After 4 seconds we can get the data
+        }
+        getData(1);
+        getData(2);
+        getData(3);
+        getData(4); 
+
+        function getData(dataId,getNextData){
+           setTimeout(()=>{
+            document.writeln("Data :" + dataId + "<br>");
+            getNextData();
+           },4000)
+        }
+        getData(5 , () =>{
+            document.writeln("getting data 6.....");
+            getData(6, () =>{
+                document.writeln("getting data 7.....");
+                getData(7)
+            })
+        });
+        let promise1 = new Promise((resolve,reject)=>{
+             console.log("I am promise");  
+            // resolve("success");  //fullfilled
+            reject("some error occured");
+        })
+        function getData(dataId,getNextData){
+            return new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    document.writeln("data",dataId);
+                    resolve("success");
+                    getNextData();
+                },5000);
+
+            });
+        }
+
+        const getPromise = () =>{
+            return new Promise((resolve,reject) =>{
+                 document.writeln("This is my promise" + "<br>");
+                 //resolve("success");
+                 reject("Network error")
+            });
+        }
+        var promise = getPromise();
+        promise.then((res) =>{
+            document.writeln("promise fullfilled " + res);
+        });
+        var promise = getPromise();
+        promise.catch((err) =>{
+            document.writeln("promise failed " + err);
+        })
+
+        //chain promises
+        function asyncFunction1(){
+            return new Promise((resolve,reject) =>{
+                setTimeout(() =>{
+                    document.writeln("Data1");
+                    resolve("Success");
+                },4000);
+
+            });
+        };
+
+        function asyncFunction2(){
+            return new Promise((resolve,reject) =>{
+                  setTimeout(() =>{
+                    document.writeln("Data2");
+                    resolve("success");
+                  },4000);
+            });
+        }
+
+        document.writeln("Fetching data1");
+        let p1 = asyncFunction1();
+        p1.then((res) =>{
+          document.writeln(res);
+        });
+
+        document.writeln("Fetching data2");
+        let p2 = asyncFunction2();
+        p2.then((res) =>{
+            document.writeln(res);
+        })
+
+    </script>
+    
+</body>
+</html>

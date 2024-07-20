@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack Function</title>
+</head>
+<body>
+    <script>
+        //Call Back function
+       /* function greet(name,callBack){
+            document.writeln("My name is " + name + "<br>");
+            callBack();
+        }
+        function sayGreetings(){
+            document.writeln("Hi how are you guys");
+        }
+
+        greet("vasu",sayGreetings); */
+
+        //Call Back hell
+        
+        // function getData(dataId,callBack){
+        //     setTimeout(() =>{
+        //         document.writeln("Data :" + dataId + "<br>");
+        //         callBack();
+        //     },3000)
+        // }
+        // // function fun2(dataId){
+        // //     setTimeout(() =>{
+        // //         document.writeln("Data :" + dataId);
+        // //         callBack();
+        // //     },6000)
+        // // }
+        // getData(2,()=>{
+        //     getData(3 , ()=>{
+        //         getData(4,()=>{
+        //             document.writeln("Success!");
+        //         });
+        //     });
+        // });
+        function first(callback){
+            setTimeout(() =>{
+                document.writeln("first task executed" + "<br>");
+                callback();
+            },3000)
+        }
+        function second(callback){
+            setTimeout(() =>{
+                document.writeln("second task executed" + "<br>");
+                callback();
+            },3000)
+        }
+        function third(callback){
+            setTimeout(() =>{
+                document.writeln("third task executed" + "<br>");
+                callback();
+            },3000);
+        }
+        first(()=>{
+              second(() =>{
+                    third(() =>{
+                        document.writeln("All tasks are completed" + "<br>");
+                    });
+              });
+        });
+    </script>
+</body>
+</html>
