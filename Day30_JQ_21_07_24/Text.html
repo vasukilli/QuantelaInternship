@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <p>This is a paragraph</p>
+    <p>This is a another paragraph</p>
+    <div id="div">This is a div element</div>
+    <script>
+        // jQuery(document).ready(function (){
+        //     $("p").css("color","red");
+        //     $("#div").hide();
+        // });
+        // $(function(){
+        //     $("p").css("color","Orange");
+        //     $("div").hide();
+        // });
+        function callFn(){
+            document.writeln("This is calling from callFn");
+        }
+        //$(document).ready(callFn);
+        $(window).on("load",callFn);
+    </script>
+    
+    
+</body>
+</html>

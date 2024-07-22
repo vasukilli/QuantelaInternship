@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .myClass{
+            color : green;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>CompoundSelector Example</h2>
+    <div id="contents">
+        <ul class = "people">
+            <li>Vasudeva rao killi</li>
+            <li>Kalyani killi</li>
+            <li>Triveni killi</li>
+
+        </ul>
+        <ol class = "animals">
+            <li>Elephant</li>
+            <li>Tiger</li>
+            <li>Lion</li>
+
+        </ol>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var peopleData = $("#contents .people li");
+            peopleData.css("color","red");
+
+            var animalData = $("div#contents ol.animals li");
+            animalData.show().addClass("myClass");
+        })
+    </script>
+    
+</body>
+</html>

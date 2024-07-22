@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+     <div id="content">This is <strong>HTML</strong> content.</div><br><br>
+    <p id="p1">This is a <strong>Paragraph</strong> , in this document</p>
+    <img id="myImage" src = "image.jpg" alt = "myPicture"><br><br>
+    <div id="box" style = "width : 100px ; height : 100px ; background-color : lightcoral ; border:1px solid rgb(22, 28, 97)" ></div>
+    <input id="name" type ="text" value = "vasu"/> 
+    <h1>Moving , Copying and removing</h1>
+
+    <div id="container">
+       <p>This is a paragraph 1</p>
+    </div>
+    <p id="p3">This is a paragraph 3</p>
+    <p id="p2">This is a paragraph 2</p>
+
+    <div id="div1">
+          <p>This is a paragraph 4</p>
+    </div>
+    <p id="p5">This is a paragraph 5</p>
+    <p id="p6">This is a paragraph 6</p> 
+    <h1>Copying element</h1>
+    <div id="originalContent">Original Data</div>
+    <div id="copyContent"></div>
+
+    <div id="container1">
+        <p id="paragraph1">paragraph1</p>
+        <p id="paragraph2">paragraph2</p>
+    </div>
+
+
+    <script>
+           $(document).ready(function(){
+            var htmlContent = $("#content").html();
+            //document.writeln(htmlContent);
+            $("#content").html("<p>This is new <strong>HTML<strong> element</P> ");
+
+              var paraContent = $("#p1").text();
+              $("#p1").text("Hi , I am vasudeva rao killi");
+
+              var srcVal = $("#myImage").attr("src");
+              $("#myImage").attr("alt","vasu picture");
+
+              var widthVal = $("#box").width();
+              $("#box").width("200px");
+
+              var heightVal = $("#box").height();
+              $("#box").height("200px");
+
+              var namVal = $("#name").val();
+              $("#name").val("devarao");
+
+            $("#container").append($("#p2"));
+            $("#container").prepend($("#p3"));
+
+            $("#div1").after($("#p6"));
+            $("#div1").before($("#p5"));
+            $("#container").css("color","red");
+
+            $("#container").appendTo($("#div1"));
+
+            var copyData = $("#originalContent").clone();
+            $("#copyContent").append(copyData);
+
+           $("#container1 #paragraph2").remove();
+           // $("#paragraph1").remove();
+           $("#container1").empty();
+
+           });
+    </script>
+    
+</body>
+</html>
