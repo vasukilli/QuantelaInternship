@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Mr",
+      "first_name": "Kerby",
+      "last_name": "Mimmack",
+      "email": "kmimmack0@cnbc.com",
+      "gender": "Male",
+      "language": "Dari"
+    },
+    {
+      "id": 2,
+      "title": "Mr",
+      "first_name": "Paulie",
+      "last_name": "Slark",
+      "email": "pslark1@army.mil",
+      "gender": "Male",
+      "language": "Fijian"
+    },
+    {
+      "id": 3,
+      "title": "Mr",
+      "first_name": "Zachary",
+      "last_name": "Andor",
+      "email": "zandor2@feedburner.com",
+      "gender": "Male",
+      "language": "Maltese"
+    },
+    {
+      "id": 4,
+      "title": "Rev",
+      "first_name": "Gigi",
+      "last_name": "Doogood",
+      "email": "gdoogood3@utexas.edu",
+      "gender": "Female",
+      "language": "Swedish"
+    }
+]
