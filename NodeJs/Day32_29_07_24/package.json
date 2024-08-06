@@ -1,0 +1,13 @@
+{
+  "name": "day32_29_07_24",
+  "version": "1.0.0",
+  "main": "Math1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node Math1.js"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
