@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "car_make": "Dodge",
+        "car_model": "Durango",
+        "car_model_year": 2000,
+        "car_vin": "JN1AZ4EH4FM316196"
+    },
+    {
+        "id": 2,
+        "car_make": "Hyundai",
+        "car_model": "Equus",
+        "car_model_year": 2011,
+        "car_vin": "JM3KE2BE4D0181163"
+    },
+    {
+        "id": 3,
+        "car_make": "Mitsubishi",
+        "car_model": "Galant",
+        "car_model_year": 2004,
+        "car_vin": "WDBWK5EA3BF354029"
+    },
+    {
+        "id": 4,
+        "car_make": "Honda",
+        "car_model": "del Sol",
+        "car_model_year": 1994,
+        "car_vin": "19XFB4F26EE851951"
+    },
+    {
+        "id": 5,
+        "car_make": "Toyota",
+        "car_model": "Tercel",
+        "car_model_year": 1993,
+        "car_vin": "WAUXU54B62N667427"
+    },
+    {
+        "id": 6,
+        "car_make": "Hyundai",
+        "car_model": "Sonata",
+        "car_model_year": 1998,
+        "car_vin": "1GYFK36299R297741"
+    },
+    {
+        "id": 7,
+        "car_make": "Chevrolet",
+        "car_model": "Corvette",
+        "car_model_year": 1972,
+        "car_vin": "WA1AV74L57D200968"
+    },
+    {
+        "id": 8,
+        "car_make": "Chevrolet",
+        "car_model": "Blazer",
+        "car_model_year": 2000,
+        "car_vin": "5FNRL5H24FB059435"
+    },
+    {
+        "id": 9,
+        "car_make": "Toyota",
+        "car_model": "Solara",
+        "car_model_year": 2005,
+        "car_vin": "1FTEW1CM9CF180442"
+    },
+    {
+        "id": 10,
+        "car_make": "Pontiac",
+        "car_model": "Grand Prix",
+        "car_model_year": 1967,
+        "car_vin": "WAUMF98K49A127669"
+    }
+]
