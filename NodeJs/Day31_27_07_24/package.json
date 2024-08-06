@@ -1,0 +1,12 @@
+{
+  "name": "day31_27_07_24",
+  "version": "1.0.0",
+  "main": "Test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node Test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
