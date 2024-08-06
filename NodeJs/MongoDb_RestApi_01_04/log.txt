@@ -1,0 +1,16 @@
+
+1722838722676 : ::1 GET /
+1722838817167 : ::1 GET /api/animal/
+1722838843942 : ::1 GET /api/animal/
+1722838845324 : ::1 GET /favicon.ico
+1722838991451 : ::1 POST /api/animal/
+1722839009496 : ::1 GET /api/animal/
+1722839081752 : ::1 GET /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839100200 : ::1 GET /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839171940 : ::1 PATCH /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839186777 : ::1 GET /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839236660 : ::1 DELETE /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839243612 : ::1 GET /api/animal/66b06fcf6bd3a32ab21d7b10
+1722839247320 : ::1 GET /api/animal/
+1722839290225 : ::1 GET /api/animal/data
+1722839590699 : ::1 GET /api/animal/data

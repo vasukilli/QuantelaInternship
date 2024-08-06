@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "animalName": "Quail, gambel's",
+        "animaSpecNam": "Callipepla gambelii",
+        "plantFam": "Scrophulariaceae",
+        "city": "Visby",
+        "country": "Sweden",
+        "phone": "388-858-3004"
+    },
+    {
+        "id": 2,
+        "animalName": "White-throated robin",
+        "animaSpecNam": "Irania gutteralis",
+        "plantFam": "Iridaceae",
+        "city": "Ron Phibun",
+        "country": "Thailand",
+        "phone": "444-946-1413"
+    },
+    {
+        "id": 3,
+        "animalName": "Grouse, greater sage",
+        "animaSpecNam": "Centrocercus urophasianus",
+        "plantFam": "Scrophulariaceae",
+        "city": "Huacaschuque",
+        "country": "Peru",
+        "phone": "991-218-6532"
+    }
+]
