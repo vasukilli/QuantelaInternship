@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>URL Generator :</h1>
+    <div>
+        <H2>This is the generated URL :</H2>
+        <% if (locals.id) { %>
+            <p>http://localhost:8000/api/<%= id %></p>
+         
+        <% } %>
+    </div>
+    <div>
+        <h2>Enter URL :</h2>
+        <form method = "post" action = "/url/">
+            <input 
+            type ="text"
+            placeholder = "http://example.com"
+            name = "url"/>
+            <button type = "submit">Generate!</button>
+        </form>
+    </div>
+</body>
+</html>
