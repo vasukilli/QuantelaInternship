@@ -1,0 +1,44 @@
+<!-- <h1>This is the {{title}} page</h1>
+<ol>
+  <li>(TODO) Angular Documentation guide ..</li>
+</ol> -->
+<h1>Title : {{title}}</h1><br>
+  <form>
+    <label>Enter Name : </label>
+    <input type="text"/><br><br>
+    <!-- <button type="submit" [disabled]="isInvalidForm">Submit</button> -->
+  </form>
+  <div [hidden]=isShow>Hi</div>
+  <button (click)='onToggle()'>Toggle</button><br><br>
+
+
+
+  @if(isAdmin){
+    <form>
+      <label>Name : </label>
+      <input type="text" placeholder="Enter Name"/><br><br>
+      <label>Age : </label>
+      <input type="text" placeholder="Enter Age"/><br><br>
+      <label>Gender : </label>
+      <input type="text" placeholder="Enter Gender"/><br><br>
+      <button type="submit" [disabled]='isInvalidForm'>Submit</button>
+    </form>
+  }
+  @else {
+    <h2>This is else block execution...</h2>
+}
+
+<br><br>
+
+
+<!-- @for(ingredient of ingredients , track ingredient.name){
+  <li>{{ingredient.name}} - {{ingredient.price}}</li>
+} -->
+
+<h3>{{data1}}</h3>
+<h3>{{data2}}</h3>
+<button (click)="toUpper()">To Upper Case</button>
+<button (click)="toLower()">To Lower Case</button>
+
+
+
